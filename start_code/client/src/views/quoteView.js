@@ -1,8 +1,8 @@
-var UI = function(quotes){
+var QuoteView = function(quotes){
   this.render(quotes);
 }
 
-UI.prototype = {
+QuoteView.prototype = {
   render: function(quotes){
     
     console.log(quotes);
@@ -17,4 +17,4 @@ UI.prototype = {
   }
 }
 
- module.exports = UI;
+ module.exports = QuoteView;
