@@ -70,11 +70,11 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-var UI = function(quotes){
+var QuoteView = function(quotes){
   this.render(quotes);
 }
 
-UI.prototype = {
+QuoteView.prototype = {
   render: function(quotes){
     
     console.log(quotes);
@@ -89,13 +89,13 @@ UI.prototype = {
   }
 }
 
- module.exports = UI;
+ module.exports = QuoteView;
 
 /***/ }),
 /* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var UI = __webpack_require__(0);
+var QuoteView = __webpack_require__(0);
 
 var app = function(){
   var url = "http://localhost:3000/quotes";
@@ -113,7 +113,7 @@ var requestComplete = function(){
   if(this.status !== 200) return ;
   var quoteString = this.responseText;
   var quotes = JSON.parse(quoteString);
-  var ui = new UI(quotes);
+  var quoteView = new QuoteView(quotes);
 }
 
 window.onload = app;
